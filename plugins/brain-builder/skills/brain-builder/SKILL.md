@@ -99,10 +99,12 @@ Common issues + fixes:
 
 ## Install
 
-In the course lesson where this skill is needed (Day 1 Lesson 2):
-
 ```bash
-claude skill add --url https://raw.githubusercontent.com/keepinitgreen93/ai-team-in-3-days/main/brain-builder-skill/SKILL.md
+# One-time: register the marketplace
+claude plugin marketplace add keepinitgreen93/ai-team-in-3-days
+
+# Per lesson: install this skill (Day 1 Lesson 2)
+claude plugin install brain-builder@ai-team-in-3-days
 ```
 
 ## Used in

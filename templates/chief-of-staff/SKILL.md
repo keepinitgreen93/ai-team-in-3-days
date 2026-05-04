@@ -28,10 +28,17 @@ This is a pre-configured AI Employee. The CLAUDE.md in this folder defines the r
 
 ## Install
 
-In the course lesson where this skill is needed (Day 1 Lesson 3):
+Chief of Staff is an EMPLOYEE FOLDER, not a Claude Code skill — students drop it into their project workspace and open it in Claude Code.
 
 ```bash
-claude skill add --url https://raw.githubusercontent.com/keepinitgreen93/ai-team-in-3-days/main/chief-of-staff/SKILL.md
+# One-time: clone the repo
+git clone https://github.com/keepinitgreen93/ai-team-in-3-days ~/ai-team-in-3-days
+
+# Per lesson: copy Chief of Staff into your working folder (Day 1 Lesson 3)
+cd ~/your-business-ai      # or wherever your brain/ folder lives
+~/ai-team-in-3-days/install.sh chief-of-staff .
+
+# Open chief-of-staff/ in Claude Code
 ```
 
 This bundle includes the Chief of Staff Employee + the 12-question Diagnostic skill (`.claude/skills/diagnostic/`) + the `/hire-employee` skill (`.claude/skills/hire-employee/`) — all installed together.

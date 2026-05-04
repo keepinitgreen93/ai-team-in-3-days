@@ -1,0 +1,72 @@
+{
+  "name": "ai-team-in-3-days",
+  "version": "1.1.0",
+  "description": "Hire your first 3 AI Employees in 3 days. Skills + employee templates from the AI Team in 3 Days course inside the AI Business Growth Academy.",
+  "owner": {
+    "name": "keepinitgreen93",
+    "email": "keepinitgreen93@users.noreply.github.com"
+  },
+  "plugins": [
+    {
+      "name": "brain-builder",
+      "source": "./plugins/brain-builder",
+      "description": "Karpathy-method Second Brain onboarding. Walks the user through Obsidian install, scaffolds the brain/ folder structure, teaches wiki-links. Used in Day 1 Lesson 2 of AI Team in 3 Days.",
+      "version": "1.0.0",
+      "author": {
+        "name": "keepinitgreen93",
+        "url": "https://github.com/keepinitgreen93"
+      },
+      "category": "knowledge-base",
+      "homepage": "https://github.com/keepinitgreen93/ai-team-in-3-days",
+      "keywords": [
+        "second-brain",
+        "obsidian",
+        "knowledge-base",
+        "ai-employee",
+        "academy",
+        "karpathy",
+        "wiki",
+        "markdown"
+      ]
+    },
+    {
+      "name": "meta-ads-coming-soon",
+      "source": "./plugins/meta-ads-coming-soon",
+      "description": "COMING SOON stub — the full Meta Ads (Facebook + Instagram) skill drops in a future Academy update. Designs ad campaigns, writes ad copy variations, analyzes performance.",
+      "version": "0.0.1",
+      "author": {
+        "name": "keepinitgreen93",
+        "url": "https://github.com/keepinitgreen93"
+      },
+      "category": "marketing",
+      "homepage": "https://github.com/keepinitgreen93/ai-team-in-3-days",
+      "keywords": [
+        "coming-soon",
+        "meta-ads",
+        "facebook-ads",
+        "instagram-ads",
+        "academy"
+      ]
+    },
+    {
+      "name": "content-coming-soon",
+      "source": "./plugins/content-coming-soon",
+      "description": "COMING SOON stub — the full Content skill drops in a future Academy update. Writes blog posts, lead magnets, social captions, email sequences in your brand voice.",
+      "version": "0.0.1",
+      "author": {
+        "name": "keepinitgreen93",
+        "url": "https://github.com/keepinitgreen93"
+      },
+      "category": "content",
+      "homepage": "https://github.com/keepinitgreen93/ai-team-in-3-days",
+      "keywords": [
+        "coming-soon",
+        "content",
+        "blog",
+        "lead-magnet",
+        "social-media",
+        "academy"
+      ]
+    }
+  ]
+}

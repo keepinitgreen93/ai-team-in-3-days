@@ -1,0 +1,19 @@
+{
+  "name": "content-coming-soon",
+  "version": "0.0.1",
+  "description": "COMING SOON stub — the full Content skill drops in a future Academy update.",
+  "author": {
+    "name": "keepinitgreen93",
+    "url": "https://github.com/keepinitgreen93"
+  },
+  "keywords": [
+    "coming-soon",
+    "content",
+    "blog",
+    "lead-magnet",
+    "social-media",
+    "academy"
+  ],
+  "skills": "./skills/",
+  "repository": "https://github.com/keepinitgreen93/ai-team-in-3-days"
+}

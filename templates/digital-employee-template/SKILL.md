@@ -25,10 +25,14 @@ The new AI Employee should reference the user's Second Brain at `brain/` (or whe
 
 ## Install
 
-In the course lesson where this skill is needed (Day 1 Lesson 3 — referenced by Chief of Staff):
+Digital Employee Template is a folder TEMPLATE that `/hire-employee` (running inside Chief of Staff) uses internally to bootstrap new AI Employees. Students don't usually install it directly — Chief of Staff handles it. If you want a copy for reference:
 
 ```bash
-claude skill add --url https://raw.githubusercontent.com/keepinitgreen93/ai-team-in-3-days/main/digital-employee-template/SKILL.md
+# One-time: clone the repo (skip if already done)
+git clone https://github.com/keepinitgreen93/ai-team-in-3-days ~/ai-team-in-3-days
+
+# Copy the template
+~/ai-team-in-3-days/install.sh digital-employee-template ~/wherever
 ```
 
 ## Used in

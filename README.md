@@ -2,48 +2,52 @@
 
 > *Hire your first 3 AI Employees in 3 days. Save 20+ hours every week and let your AI Team bring in your next client.*
 
-This repo contains the skills + templates for the **AI Team in 3 Days** course inside the [AI Business Growth Academy](https://academy.trulyauthenticmarketing.com). Members work through the 10-lesson course, install these skills as needed (just-in-time, the lessons walk you through it), and walk away with a working 3-Employee AI Team.
+This repo is both:
+- **A Claude Code plugin marketplace** for the skills (Brain Builder + future Specialist Library drops).
+- **A template repo** for employee folders that students drop into their working project.
+
+Companion to the **AI Team in 3 Days** course inside the [AI Business Growth Academy](https://academy.trulyauthenticmarketing.com). Members work through the 10-lesson course, install these assets just-in-time as the lessons walk you through it, and walk away with a working 3-Employee AI Team.
 
 ---
 
-## What's in this repo
+## Install — once
 
-| # | Skill | What it does | Used in |
-|---|---|---|---|
-| 1 | [`digital-employee-template/`](./digital-employee-template/) | Universal AI Employee starter — runs the 12-question onboarding flow, then rewrites its own CLAUDE.md based on your answers | Day 1 Lesson 3 + every future hire |
-| 2 | [`brain-builder-skill/`](./brain-builder-skill/) | Karpathy-method Second Brain onboarding. Walks you through Obsidian install, scaffolds the `brain/` folder structure, teaches wiki-links | Day 1 Lesson 2 |
-| 3 | [`chief-of-staff/`](./chief-of-staff/) | Pre-configured Chief of Staff Employee bundled with the 12-question Diagnostic + the `/hire-employee` skill | Day 1 Lessons 3-4, runs throughout |
-| 4 | [`agent-map-template/`](./agent-map-template/) | Pre-built `.excalidraw` template — open at [excalidraw.com](https://excalidraw.com) (free web app, no install) and fill in your team | Day 3 Lesson 3 |
-| 5 | [`meta-ads-skill-coming-soon/`](./meta-ads-skill-coming-soon/) | *Coming Soon* placeholder — full Meta Ads skill drops in a future Academy update | Future drop |
-| 6 | [`content-skill-coming-soon/`](./content-skill-coming-soon/) | *Coming Soon* placeholder — full Content skill drops in a future Academy update | Future drop |
+```bash
+# Register the marketplace
+claude plugin marketplace add keepinitgreen93/ai-team-in-3-days
 
----
+# Clone the repo for the templates
+git clone https://github.com/keepinitgreen93/ai-team-in-3-days ~/ai-team-in-3-days
+```
 
-## Install commands
+## Install — per lesson
+
+| Lesson | What to install | Command |
+|---|---|---|
+| Day 1 Lesson 2 | Brain Builder Skill | `claude plugin install brain-builder@ai-team-in-3-days` |
+| Day 1 Lesson 3 | Chief of Staff folder | `~/ai-team-in-3-days/install.sh chief-of-staff ~/your-project-folder` |
+| Day 3 Lesson 3 | Agent Map Template | Open `~/ai-team-in-3-days/templates/agent-map-template/agent-map.excalidraw` at [excalidraw.com](https://excalidraw.com) |
 
 The course lessons walk you through these one at a time, **just-in-time**. You don't need to install them all upfront — wait until the lesson tells you to.
 
-### Day 1 Lesson 2 — Brain Builder Skill
+---
 
-```bash
-claude skill add --url https://raw.githubusercontent.com/keepinitgreen93/ai-team-in-3-days/main/brain-builder-skill/SKILL.md
-```
+## Repo structure
 
-### Day 1 Lesson 3 — Chief of Staff bundle (includes Diagnostic + /hire-employee)
+| Folder | What it is |
+|---|---|
+| `plugins/brain-builder/` | Brain Builder Skill — install via marketplace |
+| `plugins/meta-ads-coming-soon/` | Coming Soon stub plugin |
+| `plugins/content-coming-soon/` | Coming Soon stub plugin |
+| `templates/chief-of-staff/` | Chief of Staff Employee folder template — copy to your project workspace |
+| `templates/digital-employee-template/` | Universal AI Employee starter — used internally by `/hire-employee` |
+| `templates/agent-map-template/` | Pre-built `.excalidraw` template — open at excalidraw.com |
+| `_docs/` | Supporting docs (examples-reference, etc.) |
 
-```bash
-claude skill add --url https://raw.githubusercontent.com/keepinitgreen93/ai-team-in-3-days/main/chief-of-staff/SKILL.md
-```
+### Why two install patterns?
 
-### Day 1 Lesson 3 — Digital Employee Template (referenced by Chief of Staff)
-
-```bash
-claude skill add --url https://raw.githubusercontent.com/keepinitgreen93/ai-team-in-3-days/main/digital-employee-template/SKILL.md
-```
-
-### Day 3 Lesson 3 — Agent Map Template (download, no install)
-
-Download `agent-map-template/agent-map.excalidraw` from this repo and open at [excalidraw.com](https://excalidraw.com) (free web app, no account needed). Fill in your team. Export PNG or PDF when done.
+- **Skills** (Brain Builder + future drops) are real Claude Code plugins. They install with the standard `claude plugin install` command — clean UX, version-managed by the marketplace.
+- **Templates** (Chief of Staff, Digital Employee Template, Agent Map) are folders or files that get dropped into the user's project workspace. Chief of Staff has its own CLAUDE.md, its own context, and nested skills — students open the folder in Claude Code as a workspace. That's a different shape than a Claude Code skill, so it ships as a template you copy with `install.sh`.
 
 ---
 
