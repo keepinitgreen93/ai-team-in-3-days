@@ -94,3 +94,21 @@ Common issues + fixes:
 - **Folder structure didn't get created** → Re-run Step 3's commands; check if there's a typo in the path
 - **User on Linux** → Same commands as Mac; Obsidian Linux install is via AppImage or Snap, see `references/obsidian-install-mac.md` Linux note
 - **User wants to skip Obsidian and use VS Code/Notepad** → Fine. Any text editor works. The Brain is just markdown files. Update `context/resources.md` with whatever editor they're using.
+
+---
+
+## Install
+
+In the course lesson where this skill is needed (Day 1 Lesson 2):
+
+```bash
+claude skill add --url https://raw.githubusercontent.com/keepinitgreen93/ai-team-in-3-days/main/brain-builder-skill/SKILL.md
+```
+
+## Used in
+
+**Day 1, Lesson 2** of AI Team in 3 Days — *Build Your Second Brain*. Walks the student through Obsidian install, scaffolds the empty `brain/` folder structure, teaches wiki-links. The diagnostic in Lesson 4 populates the Brain.
+
+## Source
+
+Source of truth lives in the [AI Business Growth Academy](https://academy.trulyauthenticmarketing.com) course materials. This repo mirrors the active version. Updates ship via tagged releases — see [github.com/keepinitgreen93/ai-team-in-3-days/releases](https://github.com/keepinitgreen93/ai-team-in-3-days/releases).

@@ -23,3 +23,27 @@ This is a pre-configured AI Employee. The CLAUDE.md in this folder defines the r
 - The `/hire-employee` skill (generative role-spec writer)
 - The Hire Recommendations memo template
 - TAM brand voice defaults (overridden by user in diagnostic Q4-Q6)
+
+---
+
+## Install
+
+In the course lesson where this skill is needed (Day 1 Lesson 3):
+
+```bash
+claude skill add --url https://raw.githubusercontent.com/keepinitgreen93/ai-team-in-3-days/main/chief-of-staff/SKILL.md
+```
+
+This bundle includes the Chief of Staff Employee + the 12-question Diagnostic skill (`.claude/skills/diagnostic/`) + the `/hire-employee` skill (`.claude/skills/hire-employee/`) — all installed together.
+
+## Used in
+
+- **Day 1, Lesson 3** — *Install Your Chief of Staff* (the install itself)
+- **Day 1, Lesson 4** — *Run the Business Diagnostic* (Chief of Staff runs the diagnostic skill)
+- **Day 2** — *Hire Content Designer* (Chief of Staff dispatches `/hire-employee`)
+- **Day 3** — *Hire Web Designer* + *Build Your Agent Map* (Chief of Staff dispatches `/hire-employee` again, then helps the student fill in the agent map)
+- **Forever after** — every monthly Specialist drop is hired through Chief of Staff via `/hire-employee`
+
+## Source
+
+Source of truth lives in the [AI Business Growth Academy](https://academy.trulyauthenticmarketing.com) course materials. This repo mirrors the active version. Updates ship via tagged releases — see [github.com/keepinitgreen93/ai-team-in-3-days/releases](https://github.com/keepinitgreen93/ai-team-in-3-days/releases).

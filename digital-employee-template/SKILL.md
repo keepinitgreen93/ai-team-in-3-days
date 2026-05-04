@@ -20,3 +20,24 @@ See `CLAUDE.md` for the full onboarding flow. See `context/company.md` and `cont
 ## Brain reference convention
 
 The new AI Employee should reference the user's Second Brain at `brain/` (or wherever the user's Brain Builder Skill set it up — typically a `brain/` folder in their project root, or an Obsidian vault path stored in `context/resources.md`).
+
+---
+
+## Install
+
+In the course lesson where this skill is needed (Day 1 Lesson 3 — referenced by Chief of Staff):
+
+```bash
+claude skill add --url https://raw.githubusercontent.com/keepinitgreen93/ai-team-in-3-days/main/digital-employee-template/SKILL.md
+```
+
+## Used in
+
+- **Day 1, Lesson 3** — *Install Your Chief of Staff* (Chief of Staff is built FROM this template)
+- **Day 2** — *Hire Content Designer* (the new Content Designer Employee inherits this template via `/hire-employee`)
+- **Day 3** — *Hire Web Designer* (same — Web Designer inherits this template)
+- **Forever after** — every future hire (every monthly Specialist drop, every custom role) is built from this same universal template
+
+## Source
+
+Source of truth lives in the [AI Business Growth Academy](https://academy.trulyauthenticmarketing.com) course materials. This repo mirrors the active version. Updates ship via tagged releases — see [github.com/keepinitgreen93/ai-team-in-3-days/releases](https://github.com/keepinitgreen93/ai-team-in-3-days/releases).
