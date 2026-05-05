@@ -6,9 +6,9 @@ Pre-built `.excalidraw` agent map for the AI Team in 3 Days course (Day 3 Lesson
 
 | File | What it is |
 |---|---|
-| `agent-map.excalidraw` | The template — TAM-branded agent-map structure with empty placeholders for your name, your two Specialists, and a "Future hire" slot. **This is the primary deliverable.** |
-
-> **PNG + PDF previews coming soon.** v1 ships the `.excalidraw` source only. Pre-rendered PNG and PDF previews will land in a follow-up patch. For now, the rendered preview is whatever excalidraw.com shows when you open the file.
+| `agent-map.excalidraw` | The template source — TAM-branded structure with empty placeholders for your name, your two Specialists, and a "Future hire" slot. **This is the primary editable deliverable.** |
+| `agent-map.png` | Rendered preview (1220×727, 79 KB) — view at-a-glance or use as a reference graphic |
+| `agent-map.svg` | Vector preview — embed in slides, scale to any size without quality loss |
 
 ## How to use it
 
@@ -58,10 +58,16 @@ Open on excalidraw.com just to see the structure. Don't fill in. Use it as a vis
 | Background | TAM Ghost White `#F8FAFC` |
 | Text | TAM Charcoal `#1E1B4B` |
 
-## Future enhancement
+## Render pipeline
 
-The PNG + PDF pre-rendered exports will be added when:
-- The Excalidraw MCP tools load in a Claude Code session (next session start), OR
-- A canvas server with a connected browser session is available so the export API responds
+The PNG + SVG were rendered from the `.excalidraw` source via the local `mcp_excalidraw` canvas server using a headless Chromium client (puppeteer). The render script is reproducible — re-running produces identical output. To regenerate:
 
-For now, students export their own filled-in PNG/PDF from excalidraw.com after personalizing the map. Functionally this is fine — the personalization happens AFTER the download anyway.
+```bash
+# Start the canvas server (one-time per session)
+cd ~/dev/mcp_excalidraw && PORT=3000 npm run canvas
+
+# In a new terminal, run the render script
+cd ~/dev/agent-map-render && node render.mjs
+```
+
+This pipeline is internal-only — students never need to run it. The committed PNG + SVG in this folder are the canonical previews.
