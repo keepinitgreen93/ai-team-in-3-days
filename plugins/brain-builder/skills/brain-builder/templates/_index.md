@@ -1,28 +1,89 @@
-# Your Second Brain
+# Company Brain Index
 
-Welcome to your Second Brain — the shared knowledge base every AI Employee in your business will reference forever.
+Welcome to your Company Brain — the shared knowledge base your AI employees read before they make recommendations, create content, organize work, or take action.
 
-This file is the starting page. From here you can navigate to every other page in your Brain. As your Brain grows, this index grows with it.
+This Brain works in two ways:
 
-## Folders
+- **Human view:** Open this folder in Obsidian so you can browse, edit, and connect ideas.
+- **Agent view:** Point Hermes, OpenClaw, Claude Code, Codex, Anti-Gravity, Cursor, or another agent at this folder so it can read the same markdown files.
 
-- [[business/]] — who you are, what you do, your ideal customer, your voice, your boundaries
-- [[products/]] — your offers, pricing, deliverables
-- [[customers/]] — real customer profiles, testimonials, success stories
-- [[content/]] — recipes, posts, drafts, swipe file
-- [[people/]] — you, your team, key relationships
-- [[processes/]] — SOPs, workflows, "how I do X"
+## Start here
 
-## Right now
+- [[business/about]] — what the business does and why it exists
+- [[business/goals]] — current business goals and priorities
+- [[business/boundaries]] — what AI should never do without approval
+- [[voice/brand-voice]] — how the business sounds
+- [[offers/main-offer]] — core offer, pricing, deliverables, and promise
+- [[customers/ideal-customer]] — who the business serves
+- [[processes/repeatable-workflows]] — repeated work that AI can help with
+- [[tools/tool-stack]] — tools, accounts, and systems used by the business
+- [[decisions/decision-log]] — confirmed decisions worth remembering
+- [[sources/source-inbox]] — raw links, files, notes, and ideas to process later
 
-Your Brain is empty. That's expected.
+## Base folders
 
-In the next lesson (Day 1 Lesson 4), your Chief of Staff will run the **Business Diagnostic** — 12 questions about you, your business, your bottlenecks. The answers will populate this Brain. By the end of Day 1, this page will link to a real business/about, customers/ica, products/main-offer, and more.
+- `business/` — identity, goals, boundaries, positioning, operating context
+- `offers/` — products, services, pricing, deliverables, guarantees, packaging
+- `customers/` — ideal customer, real customer notes, objections, testimonials, research
+- `voice/` — brand voice, founder voice, words to use, words to avoid
+- `content/` — posts, emails, scripts, content recipes, swipe notes
+- `processes/` — SOPs, workflows, checklists, repeated business operations
+- `people/` — founder, team, contractors, partners, important relationships
+- `tools/` — software stack, automations, accounts, integration notes
+- `decisions/` — approved strategy and business decisions
+- `sources/` — inbox for source material that still needs to be processed
 
-## How to use the Brain
+## Adaptive folders
 
-- Add new pages anywhere in the folder structure (e.g., `clients/sarah-jones.md` for a real client)
-- Wiki-link them like `[[clients/sarah-jones]]` and Obsidian creates the link
-- Every AI Employee you hire will read from this Brain on every conversation, so the more you put in here, the smarter they get over time
+Brain Builder may add more folders based on your business model, such as:
 
-See `_schema.md` for conventions on how to structure pages.
+- Local service: `service-areas/`, `jobs/`, `estimates/`, `reviews/`, `photos/`
+- Coach/consultant: `audience/`, `clients/`, `curriculum/`, `workshops/`, `sales/`
+- Agency: `clients/`, `case-studies/`, `proposals/`, `deliverables/`, `reporting/`
+- Creator/education: `curriculum/`, `lessons/`, `community/`, `launches/`
+- Ecommerce: `products/`, `collections/`, `inventory/`, `creative/`, `campaigns/`
+- SaaS/software: `product/`, `features/`, `users/`, `roadmap/`, `docs/`
+- Healthcare/wellness: `services/`, `compliance/`, `referrals/`, `scheduling/`
+- Nonprofit/community: `mission/`, `programs/`, `donors/`, `volunteers/`, `grants/`
+
+## Project workspace
+
+Your active work lives beside the Brain in `projects/`.
+
+Each project should have:
+
+```text
+projects/[project-name]/
+  brief.md
+  tasks.md
+  assets/
+  notes/
+  outputs/
+```
+
+Agents should read the relevant project brief before doing project work.
+
+## How AI should use this Brain
+
+Before giving business, marketing, sales, content, operations, or project advice, the AI should:
+
+1. Read this `_index.md`.
+2. Read 2-5 relevant Brain pages.
+3. Read the relevant `projects/[project]/brief.md` if working on a project.
+4. Ask a focused question if a key fact is missing.
+5. Avoid inventing proof, pricing, claims, testimonials, metrics, policies, or customer facts.
+6. Save confirmed durable decisions in `decisions/decision-log.md`.
+
+## How you should use this Brain
+
+Add pages naturally. Use wiki-links like:
+
+```markdown
+[[business/about]]
+[[customers/ideal-customer]]
+[[offers/main-offer]]
+```
+
+Obsidian makes those links clickable. AI agents can read the same files even when Obsidian is not installed.
+
+See `_schema.md` for page conventions.

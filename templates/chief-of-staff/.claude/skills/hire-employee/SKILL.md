@@ -1,11 +1,11 @@
 ---
 name: hire-employee
-description: Generative skill that hires a new AI Employee on demand. Reads the Brain to inherit business context, asks role-specific clarifying questions, then writes the new Employee's CLAUDE.md, role brief, voice rules, starter skill list, and folder structure. Use when the user says "hire me a [role]", "hire a [role]", "I need a [role]", "/hire-employee [role]", or any time Chief of Staff is dispatched to install a new Employee.
+description: Generative skill that hires a new AI Employee on demand. Reads the adaptive Company Brain to inherit business context, asks role-specific clarifying questions, then writes the new Employee's CLAUDE.md, role brief, voice rules, starter skill list, and folder structure. Use when the user says "hire me a [role]", "hire a [role]", "I need a [role]", "/hire-employee [role]", or any time Chief of Staff is dispatched to install a new Employee.
 ---
 
 # /hire-employee Skill
 
-The generative magic. The user says "hire me a Content Designer." You produce a fully-configured Content Designer Employee in their voice, ready for first task.
+The generative magic. The user says "hire me a Content Designer." You produce a fully configured Content Designer Employee in their voice, ready for a first task.
 
 ## Step 1: Identify the role
 
@@ -20,89 +20,121 @@ If the role doesn't map cleanly to a known type, ask:
 
 > "Sounds like you want a [closest-match role]. Is that right, or did you have something different in mind?"
 
-## Step 2: Read the Brain
+## Step 2: Read the Company Brain
 
-Read these pages from the user's Brain (paths are relative to their Brain location, stored in `context/resources.md`):
+Read `context/resources.md` first to find:
 
-- `brain/business/about.md` — what their business is
-- `brain/customers/ica.md` — who they serve
-- `brain/business/voice.md` — how this Employee should write
-- `brain/business/diagnostic.md` — what's eating their time / biggest bottlenecks
-- `brain/business/boundaries.md` — things to NEVER do
+- Company Brain path
+- agent runtime
+- headless/server path if any
+- sync method
+- project workspace path
+- active projects
 
-This is what the new Employee inherits. The new Employee's CLAUDE.md will reference all of these.
+Then read these pages from the user's Company Brain:
+
+- `Company Brain/_index.md` — the map of the Brain
+- `Company Brain/business/about.md` — what their business is
+- `Company Brain/customers/ideal-customer.md` — who they serve
+- `Company Brain/voice/brand-voice.md` — how this Employee should write
+- `Company Brain/business/diagnostic.md` — what's eating their time and biggest bottlenecks
+- `Company Brain/business/boundaries.md` — things to never do without approval
+- Any adaptive folder that matches the role, such as `Company Brain/content/`, `Company Brain/service-areas/`, `Company Brain/curriculum/`, `Company Brain/products/`, `Company Brain/clients/`, or `Company Brain/roadmap/`
+
+If working on a specific project, also read:
+
+- `projects/[project]/brief.md`
+- `projects/[project]/tasks.md`
+
+This is what the new Employee inherits. The new Employee's CLAUDE.md should reference the Company Brain and relevant projects.
 
 ## Step 3: Ask role-specific clarifying questions
 
-Read `references/role-clarifying-questions.md` for the question pattern by role type. Ask 3-5 questions specific to this role. Examples for Content Designer:
+Read `references/role-clarifying-questions.md` for the question pattern by role type. Ask 3-5 questions specific to this role.
 
-1. "What kinds of content do you want this Employee creating? (Blog posts, recipes, lead magnets, social captions, all of the above)"
-2. "Do you have a content calendar / publishing cadence in mind?"
+Examples for Content Designer:
+
+1. "What kinds of content do you want this Employee creating? Blog posts, recipes, lead magnets, social captions, or all of the above?"
+2. "Do you have a content calendar or publishing cadence in mind?"
 3. "Any topics or themes that are off-limits?"
-4. "What's the FIRST piece of content you want them to produce as a sanity check?"
+4. "What's the first piece of content you want them to produce as a sanity check?"
 
-## Step 4: Pick a starter template (if it exists)
+## Step 4: Pick a starter template if it exists
 
-Check `references/role-templates/` for a pre-built template for this role. If one exists, USE IT as the starting point and customize. If not, generate from scratch following the template structure.
+Check `references/role-templates/` for a prebuilt template for this role. If one exists, use it as the starting point and customize. If not, generate from scratch following the template structure.
 
 ## Step 5: Generate the new Employee's folder
 
-Create the new Employee folder in the user's project root. Folder name = role name in kebab-case (e.g., `content-designer/`).
+Create the new Employee folder in the user's project root. Folder name = role name in kebab-case, e.g. `content-designer/`.
 
 Generate these files inside:
 
 ### CLAUDE.md
-```markdown
-# [Role Name] — [Business Name from Brain]
 
-[2-3 sentence role brief — what they do, who they serve, what their unique angle is. Pulled from Brain context + clarifying answers.]
+```markdown
+# [Role Name] — [Business Name from Company Brain]
+
+[2-3 sentence role brief — what they do, who they serve, and what their unique angle is. Pull from Company Brain context + clarifying answers.]
 
 ## Core tasks
 
-[3-5 bullets — specific tasks pulled from the user's diagnostic + clarifying answers]
+[3-5 bullets — specific tasks pulled from the diagnostic, project briefs, and clarifying answers]
 
 ## Boundaries
 
-- [List of things this Employee should NEVER do — pulled from brain/business/boundaries.md PLUS role-specific guardrails from clarifying answers]
+- [List things this Employee should never do without approval — pulled from Company Brain/business/boundaries.md plus role-specific guardrails]
 
 ## Voice & Tone
 
-[Pulled directly from brain/business/voice.md — the same voice the user told Chief of Staff during the diagnostic]
+[Pulled directly from Company Brain/voice/brand-voice.md — the same voice the owner gave Chief of Staff during the diagnostic]
 
 ## How I work
 
-- Always read `brain/_index.md` and the relevant Brain pages on every conversation start
+- Always read `context/resources.md`, `Company Brain/_index.md`, and relevant Company Brain pages before important work.
+- If working on a project, read the relevant `projects/[project]/brief.md` and `tasks.md`.
 - Use `we` / `you` pronouns. 7th-grade reading level. Short sentences.
-- Save all work output to my workspace folder (`workspace/`)
-- When unsure, ask before assuming
-- Reference Chief of Staff at `chief-of-staff/CLAUDE.md` when escalation is needed
+- Save all work output to my workspace folder (`workspace/`).
+- When unsure, ask before assuming.
+- Escalate to Chief of Staff at `chief-of-staff/CLAUDE.md` when priorities, approvals, or cross-role coordination are unclear.
 ```
 
 ### context/resources.md
+
 ```markdown
 # Resources
 
-## Brain location
+## Company Brain
 
-- **Path:** [pulled from chief-of-staff/context/resources.md]
+- **Human editing path:** [pulled from chief-of-staff/context/resources.md]
+- **Agent runtime:** [Hermes / OpenClaw / Claude Code / Codex / Anti-Gravity / Cursor / Other, pulled from resources]
+- **Headless path:** [Railway/server/container path if any]
+- **Sync method:** [Git/private repo/manual copy/Drive/Dropbox/none yet]
+- **Index:** [path to Company Brain/_index.md]
+
+## Project workspace
+
+- **Projects path:** [pulled from resources]
+- **Active projects:** [pulled from resources]
 
 ## Tools I use
 
-| Tool | What it's for | URL |
-|------|--------------|-----|
+| Tool | What it's for | URL / Path |
+|------|--------------|------------|
 | [Filled in by clarifying questions] | | |
 ```
 
 ### .claude/skills/[2-3 starter skills]/
 
-Pre-load 2-3 starter skills based on role type. See `references/role-templates/[role-name].md` for the suggested starters per role.
+Pre-load 2-3 starter skills based on role type. See `references/role-templates/[role-name].md` for suggested starters per role.
 
 For Content Designer, that might be:
+
 - `write-blog-post/` — skill for producing a brand-voice blog post
-- `write-lead-magnet/` — skill for producing a lead magnet (PDF, checklist, ebook)
+- `write-lead-magnet/` — skill for producing a lead magnet, PDF, checklist, or ebook
 - `write-social-caption/` — skill for producing platform-native captions
 
 For Web Designer, that might be:
+
 - `homepage-section/` — skill for designing a homepage section
 - `email-popup/` — skill for designing an email signup popup
 - `landing-page/` — skill for designing a single-page landing
@@ -115,16 +147,16 @@ Empty file. The new Employee's outputs land here.
 
 Tell the user:
 
-> "Your [Role Name] is installed at `[role-name]/`. They've read your Brain and they're ready to work. Want to give them their first task now?"
+> "Your [Role Name] is installed at `[role-name]/`. They've read your Company Brain and they're ready to work. Want to give them their first task now?"
 
-If yes, hand off to the new Employee for first task.
+If yes, hand off to the new Employee for the first task.
 
 ## Step 7: End
 
 Update Chief of Staff's `context/resources.md` with the new Employee's folder path so Chief of Staff knows about them for future references:
 
 ```markdown
-## My team
+## Team
 
 | Employee | Folder | Hired |
 |---|---|---|

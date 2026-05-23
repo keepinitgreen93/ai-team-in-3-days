@@ -1,34 +1,28 @@
 # Resources
 
-<!-- Links, tools, and accounts your AI employee should know about. -->
-<!-- Add to this as you connect more tools. -->
+## Company Brain
 
-## Tools We Use
+- **Human editing path:** [filled in by Brain Builder]
+- **Agent runtime:** [Hermes / OpenClaw / Claude Code / Codex / Anti-Gravity / Cursor / Other]
+- **Headless path:** [Railway/server/container path if any]
+- **Sync method:** [Git/private repo/manual copy/Drive/Dropbox/none yet]
+- **Index:** [path to Company Brain/_index.md]
 
-| Tool | What It's For | URL |
-|------|--------------|-----|
-|      |              |     |
-|      |              |     |
+## Project workspace
 
-## Important Links
+- **Projects path:** [filled in by Brain Builder]
+- **Active projects:** [filled in by Brain Builder]
+
+## Tools I use
+
+| Tool | What it's for | URL / Path |
+|------|--------------|------------|
+| [AI agent/runtime] | Performs this employee's work | |
+| Company Brain | Business context, voice, offers, customers, and decisions | |
+
+## Important links
 
 - **Website:**
-- **Social media:**
-- **CRM / Client management:**
-- **Analytics:**
-
-## Accounts & Logins
-
-<!-- Don't put passwords here. Just note which tools you use and where to find credentials. -->
-<!-- API keys go in the .env file. -->
-
-- **Email platform:**
-- **Hosting:**
-- **Database:**
-
-## Reference Materials
-
-<!-- Link to or describe any docs, guides, SOPs, or examples your employee should reference. -->
-
--
--
+- **Social:**
+- **Calendar / booking:**
+- **Payment / checkout:**

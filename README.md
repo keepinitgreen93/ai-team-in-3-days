@@ -3,7 +3,7 @@
 > *Hire your first 3 AI Employees in 3 days. Save 20+ hours every week and let your AI Team bring in your next client.*
 
 This repo is both:
-- **A Claude Code plugin marketplace** for the skills (Brain Builder + future Specialist Library drops).
+- **A Claude Code plugin marketplace** for the skills (Adaptive Company Brain Builder + future Specialist Library drops).
 - **A template repo** for employee folders that students drop into their working project.
 
 Companion to the **AI Team in 3 Days** course inside the [AI Business Growth Academy](https://academy.trulyauthenticmarketing.com). Members work through the 10-lesson course, install these assets just-in-time as the lessons walk you through it, and walk away with a working 3-Employee AI Team.
@@ -24,7 +24,7 @@ git clone https://github.com/keepinitgreen93/ai-team-in-3-days ~/ai-team-in-3-da
 
 | Lesson | What to install | Command |
 |---|---|---|
-| Day 1 Lesson 2 | Brain Builder Skill | `claude plugin install brain-builder@ai-team-in-3-days` |
+| Day 1 Lesson 2 | Adaptive Company Brain Builder Skill | `claude plugin install brain-builder@ai-team-in-3-days` |
 | Day 1 Lesson 3 | Chief of Staff folder | `~/ai-team-in-3-days/install.sh chief-of-staff ~/your-project-folder` |
 | Day 3 Lesson 3 | Agent Map Template | Open `~/ai-team-in-3-days/templates/agent-map-template/agent-map.excalidraw` at [excalidraw.com](https://excalidraw.com) |
 
@@ -36,7 +36,7 @@ The course lessons walk you through these one at a time, **just-in-time**. You d
 
 | Folder | What it is |
 |---|---|
-| `plugins/brain-builder/` | Brain Builder Skill — install via marketplace |
+| `plugins/brain-builder/` | Adaptive Company Brain Builder Skill — install via marketplace |
 | `plugins/meta-ads-coming-soon/` | Coming Soon stub plugin |
 | `plugins/content-coming-soon/` | Coming Soon stub plugin |
 | `templates/chief-of-staff/` | Chief of Staff Employee folder template — copy to your project workspace |
